@@ -1,3 +1,5 @@
-const isOn = null;
-let test
-console.log(test, isOn);
+const player = {
+    name: "nico",
+}
+console.log(player.name);
+console.log(player["name"]);
