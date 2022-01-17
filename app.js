@@ -1,8 +1,3 @@
-const a = 5;
-const b = 2;
-const myName = "nico";
-
-console.log(a + b);
-console.log(a * b);
-console.log(a / b);
-console.log(myName);
+const isOn = null;
+let test
+console.log(test, isOn);
