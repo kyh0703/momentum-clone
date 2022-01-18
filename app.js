@@ -1,26 +1,13 @@
-// class name
-const title1 = document.getElementsByClassName("hello");
+const h1 = document.querySelector("div.hello:first-child h1");
 
-// css selector
-// 첫번째꺼만 가져온다
-const title = document.querySelector(".hello h1");
-
-// css selector
-// 첫번째꺼만 가져온다
-const titleAll = document.querySelectorAll(".hello h1");
-
+// == 연산자는 작업자가 원치 않는 강제 형변환을 실행하고 그것이 다른 언어의 ==연산자와는 차이가 있는 동작이므로 ==를 ===로 컴파일한다는 것이다.
 function handleTitleClick() {
-  title.style.color = "blue";
+  const clickedClass = "clicked";
+  if (h1.className === clickedClass) {
+    h1.className = "";
+  } else {
+    h1.className = clickedClass;
+  }
 }
 
-function handleMouseEnter() {
-  title.innerText = "mouse is hear!";
-}
-
-function handleMouseLeave() {
-  title.innerText = "mouse is gone!";
-}
-
-title.addEventListener("click", handleTitleClick);
-title.addEventListener("mouseenter", handleMouseEnter);
-title.addEventListener("mouseleave", handleMouseLeave);
+h1.addEventListener("click", handleTitleClick);
