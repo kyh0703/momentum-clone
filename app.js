@@ -9,4 +9,18 @@ const title = document.querySelector(".hello h1");
 // 첫번째꺼만 가져온다
 const titleAll = document.querySelectorAll(".hello h1");
 
-console.log(title);
+function handleTitleClick() {
+  title.style.color = "blue";
+}
+
+function handleMouseEnter() {
+  title.innerText = "mouse is hear!";
+}
+
+function handleMouseLeave() {
+  title.innerText = "mouse is gone!";
+}
+
+title.addEventListener("click", handleTitleClick);
+title.addEventListener("mouseenter", handleMouseEnter);
+title.addEventListener("mouseleave", handleMouseLeave);
