@@ -10,32 +10,45 @@
 
   <body>
     <main class="background-image">
-      <div class="screen-head"></div>
+      <div class="screen-head">
+        <div id="weather" class="screen-head__column">
+          <span></span>
+          <span></span>
+        </div>
+        <div class="screen-head__column">
+          <i class="fas fa-calendar-alt">
+            <span>2022-02-20</span>
+          </i>
+        </div>
+        <div class="screen-head__column">
+          <h1 id="greeting"></h1>
+        </div>
+      </div>
+      <div class="screen-login">
+        <span>"Hello! What is your name😀?"</span>
+        <div class="screen-login__input">
+          <input
+            id="introduction-input"
+            spellcheck="false"
+            type="text"
+            minlength="15"
+          />
+        </div>
+      </div>
       <div class="screen-main">
-        <i class="fa-regular fa-calendar"></i>
-        <h2 id="clock">00:00</h2>
-      </div>
-      <form class="hidden">
-        <input
-          required
-          maxlength="15"
-          type="text"
-          placeholder="What is your name?"
-        />
-        <input type="submit" value="login" />
-      </form>
-      <h1 id="greeting" class="hidden"></h1>
-      <form id="todo-form">
-        <input type="text" placeholder="Write a To Do and Press Enter" />
-      </form>
-      <ul id="todo-list"></ul>
-      <div id="quote">
-        <span></span>
-        <span></span>
-      </div>
-      <div id="weather">
-        <span></span>
-        <span></span>
+        <div id="quote">
+          <span></span>
+          <span></span>
+        </div>
+        <div class="screen-main__clock">
+          <h2 id="clock">00:00</h2>
+        </div>
+        <div class="screen-main__todo">
+          <form id="todo-form">
+            <input type="text" placeholder="To Do" />
+          </form>
+          <ul id="todo-list"></ul>
+        </div>
       </div>
     </main>
     <script src=" js/clock.js"></script>

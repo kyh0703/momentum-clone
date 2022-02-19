@@ -1,32 +1,42 @@
-const loginForm = document.querySelector("#login-form");
-const loginInput = document.querySelector("#login-form input");
+const USERNAME_KEY = "username";
 
+const login = document.querySelector(".screen-login");
+const loginInput = login.querySelector(".screen-login input");
+
+const main = document.querySelector(".screen-main");
 const greeting = document.querySelector("#greeting");
 const link = document.querySelector("a");
 
-const HIDDEN_CLASS = "hidden";
-const USERNAME_KEY = "username";
-
-function onLoginSubmit(event) {
-  event.preventDefault();
-  loginForm.classList.add(HIDDEN_CLASS);
+function onLoginSubmit() {
   username = loginInput.value;
+  if (username === "") {
+    return;
+  }
   greeting.innerText = `Hello ${username}`;
   localStorage.setItem(USERNAME_KEY, username);
-  greeting.classList.remove(HIDDEN_CLASS);
+  login.hidden = true;
+  main.hidden = false;
 }
 
 function paintGreeting() {
-  greeting.innerText = `Hello ${savedUsername}`;
-  greeting.classList.remove(HIDDEN_CLASS);
+  greeting.innerText = `Hello! ${savedUsername}`;
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
+console.log("saved User Name", savedUsername);
 if (savedUsername === null) {
   // show the form
-  loginForm.classList.remove(HIDDEN_CLASS);
-  loginForm.addEventListener("submit", onLoginSubmit);
+  login.hidden = false;
+  main.hidden = true;
+  login.addEventListener("submit", onLoginSubmit);
 } else {
-  loginForm.classList.add(HIDDEN_CLASS);
+  login.hidden = true;
+  main.hidden = false;
   paintGreeting();
 }
+
+loginInput.addEventListener("keyup", (event) => {
+  if (event.keyCode == 13) {
+    onLoginSubmit();
+  }
+});
