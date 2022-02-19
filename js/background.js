@@ -1,7 +1,6 @@
-// const todayQuotes = quotes[Math.floor(Math.random() * quotes.length)];
-// quote.innerText = todayQuotes.quote;
-// author.innerText = todayQuotes / author;
-
-const images = ["0.jpeg", "1.jpeg", "2.jpeg"];
-const todayBgImage = images[Math.floor(Math.random() * images.length)];
-document.body.style.backgroundImage = `url(img/${todayBgImage})`;
+const bg = document.querySelector("main");
+const PONYO_URI = "https://www.ghibli.jp/gallery/ponyo";
+const todayRandomImage = Math.floor(Math.random() * 50) + 1; // 1 ~ 50
+const paddingNum = todayRandomImage.toString().padStart(3, "0");
+const ponyoImage = `${PONYO_URI}${paddingNum}.jpg`;
+bg.style.backgroundImage = `url(${ponyoImage})`;
