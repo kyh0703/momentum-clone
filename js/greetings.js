@@ -1,4 +1,5 @@
 const USERNAME_KEY = "username";
+const HIDDEN_CLASS = "hidden";
 
 const login = document.querySelector(".screen-login");
 const loginInput = login.querySelector(".screen-login input");
@@ -14,8 +15,8 @@ function onLoginSubmit() {
   }
   greeting.innerText = `Hello ${username}`;
   localStorage.setItem(USERNAME_KEY, username);
-  login.hidden = true;
-  main.hidden = false;
+  main.classList.remove(HIDDEN_CLASS);
+  login.classList.add(HIDDEN_CLASS);
 }
 
 function paintGreeting() {
@@ -26,12 +27,12 @@ const savedUsername = localStorage.getItem(USERNAME_KEY);
 console.log("saved User Name", savedUsername);
 if (savedUsername === null) {
   // show the form
-  login.hidden = false;
-  main.hidden = true;
+  login.classList.remove(HIDDEN_CLASS);
+  main.classList.add(HIDDEN_CLASS);
   login.addEventListener("submit", onLoginSubmit);
 } else {
-  login.hidden = true;
-  main.hidden = false;
+  main.classList.remove(HIDDEN_CLASS);
+  login.classList.add(HIDDEN_CLASS);
   paintGreeting();
 }
 

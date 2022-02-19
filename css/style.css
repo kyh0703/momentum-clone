@@ -113,3 +113,7 @@ main {
 #todo-list li {
   margin-top: 5px;
 }
+
+.hidden {
+  display: none;
+}
