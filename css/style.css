@@ -101,14 +101,14 @@ main {
   font-size: 150px;
 }
 
-.todolist {
+.main__todo-list {
   height: 300px;
   overflow: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
-.todolist::-webkit-scrollbar {
+.main__todo-list::-webkit-scrollbar {
   display: none;
 }
 
