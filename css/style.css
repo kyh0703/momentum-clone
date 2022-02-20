@@ -101,6 +101,17 @@ main {
   font-size: 150px;
 }
 
+.todolist {
+  height: 300px;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.todolist::-webkit-scrollbar {
+  display: none;
+}
+
 #todo-form input:focus {
   outline: none;
 }
